@@ -1,7 +1,6 @@
 if(process.env.NODE_ENV!=="PRODUCTION"){
     require('dotenv').config({path:"/.env"})
 }
-require("./.env")
 const cloudinary=require("cloudinary")
 const mongoose=require("mongoose")
 const password = encodeURIComponent("Ujjwal000@")

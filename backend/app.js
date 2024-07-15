@@ -1,7 +1,6 @@
 if(process.env.NODE_ENV!=="PRODUCTION"){
     require('dotenv').config({path:"/.env"})
 }
-require("./.env")
 // env.config({path:".env"})
 // const port=process.env.PORT
 const port=4000
