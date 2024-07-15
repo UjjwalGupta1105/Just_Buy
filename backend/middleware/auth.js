@@ -1,4 +1,6 @@
-require('dotenv').config({path:"../.env"})
+if(process.env.NODE_ENV!=="PRODUCTION"){
+    require('dotenv').config({path:"../.env"})
+}
 const jwt=require("jsonwebtoken")
 const User=require("../userModel")
 const cookieParser=require("cookie-parser")

@@ -1,5 +1,6 @@
-require('dotenv').config({path:"../.env"})
-require("../.env")
+if(process.env.NODE_ENV!=="PRODUCTION"){
+    require('dotenv').config({path:"../.env"})
+}
 const nodeMailer=require("nodemailer")
 
 
