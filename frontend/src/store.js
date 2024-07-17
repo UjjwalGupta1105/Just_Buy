@@ -39,9 +39,9 @@ const initialState={
 const middleware=[require('redux-immutable-state-invariant').default(), thunk]
 const store=configureStore(
     {reducer},
+    window.__REDUX_DEVTOOLS_EXTENSION__?.(),
    {initialState},
     composeWithDevTools(applyMiddleware(...middleware)),
-    devTools=true
 )
 
 export default store
