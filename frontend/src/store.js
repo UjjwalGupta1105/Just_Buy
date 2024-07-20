@@ -1,4 +1,4 @@
-import {combineReducers,applyMiddleware} from 'redux'
+import {combineReducers,applyMiddleware,compose} from 'redux'
 import { configureStore} from '@reduxjs/toolkit'
 import {thunk} from 'redux-thunk'
 import {composeWithDevTools} from "redux-devtools-extension"
@@ -39,9 +39,9 @@ const initialState={
 const middleware=[require('redux-immutable-state-invariant').default(), thunk]
 const store=configureStore(
     {reducer},
-    window.__REDUX_DEVTOOLS_EXTENSION__?.(),
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
    {initialState},
-    composeWithDevTools(applyMiddleware(...middleware)),
+    compose(applyMiddleware(...middleware)),
 )
 
 export default store
