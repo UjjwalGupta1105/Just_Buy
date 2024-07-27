@@ -3,7 +3,7 @@ if(process.env.NODE_ENV!=="PRODUCTION"){
 }
 // env.config({path:".env"})
 // const port=process.env.PORT
-const port=4000
+const port=process.env.PORT || 4000
 const path=require("path")
 const express=require("express")
 const app=express()
