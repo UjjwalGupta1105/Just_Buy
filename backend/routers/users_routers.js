@@ -15,46 +15,9 @@ const { error } = require("console")
 const cloudinary=require("cloudinary")
 const stripe=require("stripe")("sk_test_51PNhLnP334ckTMRPnN6iL0uEaKxgh1AAfNS5K4VwZqBPtxiSrfHsHVsK8KTnI1LtKd8MLFLD5ZApzY4FEPCJj2LU001HInZOZi")
 
-router.post("/payment/process",async(req,res)=>{
-    try {
-        console.log("CameJholaaa")
-        const myPayment=await stripe.paymentIntents.create({
-        amount:req.body.amount,
-        currency:"inr",
-        metadata:{
-            company:"Ecommerse"
-        }
-    })
-        res.status(201).send({
-            success:true,client_secret:myPayment.client_secret
-        })
-    } catch (error) {
-        res.status(500).send(error)
-    }
-    
-})
-
-router.get("/stripeapikey",async(req,res)=>{
-    try {
-        console.log("CameJholaaa....")
-        res.status(201).send({
-            stripeApiKey:"pk_test_51PNhLnP334ckTMRPunKELsoP0yNS5z0usOXuGDD6jQK06CqCFAAAExpmjCfc60zsgUUGJFR2vAI7unNPC1nNR5ba00tPIacOA3"
-        })
-    } catch (error) {
-        res.status(500).send(error)
-    }
-    
-})
-
 
 router.post("/register",async(req,res)=>{
     try {
-        console.log("Came..")
-        // const mycloud=await cloudinary.v2.uploader.upload(req.body.avatar,{
-        //     folder:"avatars",
-        //     width:150,
-        //     crop:"scale"
-        // })
         const {name,email,password}=req.body
         console.log(`${name} + ${email} + ${password}`)
         const newUser=new User(
@@ -63,18 +26,8 @@ router.post("/register",async(req,res)=>{
                 email,
                 password,
         })
-//         const newUser =new User({
-// name,
-// email,
-// password,
-// // avatar:{
-// //     public_id:mycloud.public_id,
-// //     url:mycloud.secure_url
-// // }
-//         })
         
         console.log(newUser)
-        console.log("Gone...")
         const token=await newUser.generateAuthToken()
         const savedUser=await newUser.save()
         res.cookie("jwt",token,{
@@ -89,7 +42,6 @@ router.post("/register",async(req,res)=>{
 })
 router.get("/register",async(req,res,next)=>{
     try {
-        // const apiFeatures= new ApiFeatures(Data.find({}),req.query).search()
         const userData=await User.find({})
         res.send(userData)
     } catch(error){
@@ -315,5 +267,37 @@ router.post("/me/updatePassword",auth,async(req,res,next)=>{
      res.status(400).send("Facing issue In Deleting User....")
     }
  })
+ router.post("/payment/process",async(req,res)=>{
+    try {
+        console.log("CameJholaaa")
+        const myPayment=await stripe.paymentIntents.create({
+        amount:req.body.amount,
+        currency:"inr",
+        metadata:{
+            company:"Ecommerse"
+        }
+    })
+        res.status(201).send({
+            success:true,client_secret:myPayment.client_secret
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+    
+})
+
+router.get("/stripeapikey",async(req,res)=>{
+    try {
+        console.log("CameJholaaa....")
+        res.status(201).send({
+            stripeApiKey:"pk_test_51PNhLnP334ckTMRPunKELsoP0yNS5z0usOXuGDD6jQK06CqCFAAAExpmjCfc60zsgUUGJFR2vAI7unNPC1nNR5ba00tPIacOA3"
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+    
+})
+
+
 
 module.exports=router

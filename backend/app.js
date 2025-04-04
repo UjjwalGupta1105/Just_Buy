@@ -1,8 +1,6 @@
 if(process.env.NODE_ENV!=="PRODUCTION"){
     require('dotenv').config({path:"/.env"})
 }
-// env.config({path:".env"})
-// const port=process.env.PORT
 const port=process.env.PORT || 4000
 const path=require("path")
 const express=require("express")
@@ -13,8 +11,6 @@ const userRouter=require("./routers/users_routers")
 app.use(userRouter)
 const orderRouter=require("./routers/order_routers")
 app.use(orderRouter)
-// const paymentRouter=require("./routers/payment_routers")
-// app.use(paymentRouter)
 app.use(express.json())
 const Data=require("./productModel")
 const User=require("./userModel")

@@ -1761,8 +1761,8 @@ background-color: white;
     height: 143px;
    display: flex;
    flex-direction: column;
-   width: 100%;
-   min-width:100vw;
+   /* width: 100vw; */
+   /* min-width:100vw; */
   }
   .left-name,.left-name h2{
     text-align: center;
@@ -1774,5 +1774,8 @@ background-color: white;
   .right{
     position: absolute;
     margin-right: 10px;
+  }
+  .right a{
+    width: 100px;
   }
  }
