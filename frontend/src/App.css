@@ -204,7 +204,7 @@ background-size:cover;
   margin: auto;
   font-size: 25px;
   border-radius: 12px;
-  padding: 10px;
+  padding: 5px 10px;
   cursor: pointer;
   font-size: 30px;
   font-weight: 540;
@@ -247,7 +247,7 @@ background-size:cover;
   text-decoration: none;
   margin: 20px;
   transition: all 0.2s;
-  width: 246px;
+  width: 282px;
   border: 0.5px solid grey;
   border-radius: 12px;
 }
@@ -493,6 +493,10 @@ background-size:cover;
   margin-top: 14px;
   padding: 5px;
   font-size: 18px;
+  border: 2px solid black;
+}
+.MuiSvgIcon-root{
+  margin-bottom: 17px;
 }
 /* All Products Page */
 
@@ -1096,7 +1100,7 @@ margin-bottom: 80px;
   margin-top: 10px;
 }
 .confirm-cart-items div{
-  font-size: 18px;
+  font-size: rveiws;
 }
 .order-confirmation-page-right{
   display: inline;
@@ -1122,7 +1126,7 @@ margin-bottom: 80px;
 }
 .order-confirmation-page-right span{
   margin-top: 20px;
-  font-size: 18px;
+  font-size: all-rev;
   padding: 5px;
 }
 .order-summary{
@@ -1313,7 +1317,7 @@ border-radius: 12px;
   font-weight: 600;
 }
 .order-details-container-box span{
-  font-size: 18px;
+  font-size: reviews;
   padding: 5px;
 }
 .confirm-cart-items-container{
@@ -1356,6 +1360,7 @@ border-radius: 12px;
   text-decoration: none;
   font-size: 25px;
   color: grey;
+  margin: 10px;
 }
 .slidebar a:hover{
   color: tomato;
