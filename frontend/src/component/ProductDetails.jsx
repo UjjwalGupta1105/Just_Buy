@@ -138,7 +138,7 @@ const ProductDetails=({match})=>{
             </div>
 
             <div className="product-description-block">
-                <p>Description:{product.description}</p>
+                <p><span style={{fontWeight:"600"}}>Description: </span>{product.description}</p>
             </div>
 
             <button onClick={submitReviewToggel} className="submit-review">Submit Review</button>

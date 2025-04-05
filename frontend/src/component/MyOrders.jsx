@@ -77,7 +77,7 @@ const MyOrders=()=>{
                         sx={{ height:"110px" }}
                     />
                 </div>
-                <h2 className='my-orders-h2'>{user.name}'s Order's</h2> 
+                <Footer/>
              </>
                 } 
         </>

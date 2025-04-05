@@ -2,6 +2,7 @@ import React , {useState,useRef, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import PersonIcon from '@mui/icons-material/Person';
 import Footer from "./Footer"
 import Header from "./Header"
 import Loading from '../layout/Loading'
@@ -134,7 +135,7 @@ const LoginSignup=()=>{
 
             <form action="" className="signinForm"  ref={signupTab} encType="multipart/form-data" onSubmit={signupSubmit} >
                 <div className="signup-name">
-                    <div><MailOutlineIcon/></div>
+                    <div><PersonIcon/></div>
                     <input type="text" placeholder='Name'  className='form-inputs' name="name" required value={user.name} onChange={(e)=>registerDataChange(e)} />
                 </div>
                 <div className="signup-email">

@@ -33,7 +33,9 @@ const useOptions=()=>{
 
     ]
     if(user.role==="admin"){
-        actions.unshift( {icon :<DashboardIcon/> , name:"Dashboard",func:dashboard},)
+    // if(true){
+
+        actions.unshift( {icon :<DashboardIcon/> , name:"Admin's Dashboard",func:dashboard},)
     }
     function orders(){
         navigate("/orders")
@@ -55,7 +57,7 @@ const useOptions=()=>{
 
     return(
         <>
-        <Backdrop open={open}/>
+        {/* <Backdrop open={open}/> */}
         <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={()=>setOpen(false)}
@@ -64,6 +66,13 @@ const useOptions=()=>{
         icon={<PersonIcon/>}
         direction="down"
         className='speedDial'
+        FabProps={{
+    sx: {
+      boxShadow: 'none', 
+      '&:hover': { boxShadow: 'none' }
+    }
+  }}
+  BackdropComponent={null}
 >
          {actions.map((action) => (
              <SpeedDialAction

@@ -37,6 +37,10 @@ const Cart=()=>{
     })
 
     const checkoutHandler=()=>{
+        if(cartItems.length===0){
+            alert.error("No Items in Cart")
+            return
+        }
         if(isAuthenticated){navigate("/shipping")}
         else{
             navigate("/login")}

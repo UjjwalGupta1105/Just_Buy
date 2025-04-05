@@ -25,7 +25,7 @@ const Header=()=>{
                     <NavLink className="navitems"  to="/about">About</NavLink>
         </div>
         <div className="right">
-        <NavLink to="/search"><SearchIcon style={{color:"white"}}/></NavLink>  
+        {/* <NavLink to="/search"><SearchIcon style={{color:"white"}}/></NavLink>   */}
         {!isAuthenticated && <NavLink to="/login"><PersonIcon style={{color:"white"}}/></NavLink>}
         <NavLink to="/cart"><ShoppingCartIcon style={{color:"white"}}/></NavLink> 
         </div>

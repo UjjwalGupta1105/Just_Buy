@@ -23,7 +23,7 @@ const Header=()=>{
                     <NavLink className="navitems"  to="/about">About</NavLink>
         </div>
         <div className="right">
-        <NavLink to="/search"><SearchIcon style={{color:"black"}}/></NavLink>  
+        {/* <NavLink to="/search"><SearchIcon style={{color:"black"}}/></NavLink>   */}
         <NavLink to="/login"><PersonIcon style={{color:"black"}}/></NavLink>
         <NavLink to="/cart"><ShoppingCartIcon style={{color:"black"}}/></NavLink> 
         </div>
