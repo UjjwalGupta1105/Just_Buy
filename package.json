@@ -4,7 +4,7 @@
   "description": "Full Stack Ecommerse App...",
   "main": "backend/app.js",
   "scripts": {
-    "postinstall": "cd frontend && npm install && npm run build",
+    "postinstall": "cd frontend && npm install --legacy-peer-deps && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node backend/app.js",
     "dev":"nodemon backend/app.js"
