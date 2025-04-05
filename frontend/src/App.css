@@ -495,7 +495,7 @@ background-size:cover;
   font-size: 18px;
   border: 2px solid black;
 }
-.MuiSvgIcon-root{
+.admin-reviews-list .MuiSvgIcon-root{
   margin-bottom: 17px;
 }
 /* All Products Page */
@@ -1360,7 +1360,7 @@ border-radius: 12px;
   text-decoration: none;
   font-size: 25px;
   color: grey;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .slidebar a:hover{
   color: tomato;
@@ -1368,7 +1368,7 @@ border-radius: 12px;
 }
 .slidebar a p{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   font-size: 23px;
 }
 .slidebar h3{
